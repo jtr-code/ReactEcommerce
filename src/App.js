@@ -1,14 +1,15 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Components/Home";
-import About from "./Components/About";
-import Contact from "./Components/Contact";
-import Products from "./Components/Products";
-import SingleProduct from "./Components/SingleProduct";
-import Cart from "./Components/Cart";
-import ErrorPage from "./Components/ErrorPage";
-import { GlobalStyle } from "./Components/GlobalStyle";
+import Home from "./Home";
+import About from "./About";
+import Contact from "./Contact";
+import Products from "./Products";
+import SingleProduct from "./SingleProduct";
+import Cart from "./Cart";
+import ErrorPage from "./ErrorPage";
+import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "styled-components";
+import Header from "./components/Header";
 
 const App = () => {
     const theme = {
@@ -39,6 +40,7 @@ const App = () => {
         <ThemeProvider theme={theme}>
             <BrowserRouter>
                 <GlobalStyle />
+                <Header/>
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
