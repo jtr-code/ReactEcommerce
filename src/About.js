@@ -1,11 +1,11 @@
 import React from "react";
-import styled from "styled-components";
+import HeroSection from "./components/HeroSection";
 
 const About = () => {
-  const Wrapper = styled.section`
-    height: 100vh;
-  `;
-  return <Wrapper>About</Wrapper>;
+  const dynamicName = {
+        name:"Thapa Ecommerce"
+    }
+  return <HeroSection myData={dynamicName}/>
 };
 
 export default About;
