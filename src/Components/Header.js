@@ -5,12 +5,14 @@ import Nav from "./Nav";
 
 const Header = () => {
   return (
-    <MainHeader>
-      <NavLink to="/">
-        <img src="./images/logo.png" alt="header-logo" />
-      </NavLink>
-      <Nav />
-    </MainHeader>
+    <>
+      <MainHeader>
+        <NavLink to="/">
+          <img src="./images/logo.png" alt="header-logo" />
+        </NavLink>
+        <Nav />
+      </MainHeader>
+    </>
   );
 };
 const MainHeader = styled.header`
