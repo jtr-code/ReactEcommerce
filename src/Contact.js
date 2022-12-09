@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 const Contact = () => {
   const Wrapper = styled.section`
-    height: 100%;
-    padding: 9rem 0 5rem 0;
+    height: 100vh;
+    padding: 9rem 0rem 95rem 0;
     text-align: center;
 
     .container {
@@ -72,7 +72,7 @@ const Contact = () => {
               name="Message"
               cols="30"
               rows="10"
-              style={{overflow:"auto",resize:"none"}}
+              style={{ overflow: "auto", resize: "none" }}
               placeholder="Message"
               required
               autoComplete="off"
