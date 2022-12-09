@@ -10,8 +10,8 @@ const Home = () => {
   return (
     <>
       <HeroSection myData={dynamicName} />
-          <Services />
-          <Trusted/>
+      <Services />
+      <Trusted />
     </>
   );
 };
