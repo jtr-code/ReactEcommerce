@@ -60,12 +60,11 @@ const Contact = () => {
               placeholder="Username"
               required
               autoComplete="off"
-              autoCapitalize="off"
             />
             <input
               type="email"
               name="Email"
-              placeholder="Enter your email"
+              placeholder="Email"
               required
               autoComplete="off"
             />
@@ -73,7 +72,8 @@ const Contact = () => {
               name="Message"
               cols="30"
               rows="10"
-              placeholder="Enter your message"
+              style={{overflow:"auto",resize:"none"}}
+              placeholder="Message"
               required
               autoComplete="off"
             ></textarea>
