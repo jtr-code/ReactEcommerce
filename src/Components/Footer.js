@@ -35,7 +35,7 @@ const Footer = () => {
               <h3>Follow Us</h3>
               <div className="footer-social--icons">
                 <div>
-                <FaGithub className="icons"/>
+                  <FaGithub className="icons" />
                 </div>
                 <div>
                   <FaInstagram className="icons" />
