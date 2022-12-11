@@ -119,9 +119,17 @@ ${"" /* resuable code section  */}
     }
 
      .intro-data {
+      text-align:center;
       margin-bottom: 0;
       text-transform: uppercase;
       color: #5138ee;
+    }
+    .common-heading-feature{
+      text-align :center;
+      font-size: 3.8rem;
+      font-weight: 600;
+      margin-bottom: 6rem;
+      text-transform: capitalize;
     }
 
    .caption {
