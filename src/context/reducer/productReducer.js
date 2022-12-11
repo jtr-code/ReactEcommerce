@@ -7,7 +7,7 @@ const ProductReducer = (state, action) => {
       };
     case "SET_API_DATA":
       const featuredData = action.payload.filter((elem) => {
-        return elem.featured === true;//filtering featured products
+        return elem.featured === true;  //filtering featured products
       });
       return {
         ...state,
