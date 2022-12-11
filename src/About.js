@@ -1,4 +1,4 @@
-import { useProductContextGlobal } from "./context/productcontext";
+import { useProductContextGlobal } from "./context/productContext";
 import HeroSection from "./components/HeroSection";
 
 const About = () => {
