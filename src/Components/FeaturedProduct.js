@@ -16,7 +16,7 @@ const FeaturedProduct = () => {
   return (
     <Wrapper className="section">
       <div className="container"></div>
-      <div className="intro-data">Check Now!</div>
+      <div className="intro-data-feature">Check Now!</div>
       <div className="common-heading-feature">Our Feature Services</div>
       <div className="grid grid-three-column">
         {featuredProducts.map((elem) => {

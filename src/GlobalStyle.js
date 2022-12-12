@@ -119,6 +119,12 @@ ${"" /* resuable code section  */}
     }
 
      .intro-data {
+      text-align:start;
+      margin-bottom: 0;
+      text-transform: uppercase;
+      color: #5138ee;
+    }
+     .intro-data-feature {
       text-align:center;
       margin-bottom: 0;
       text-transform: uppercase;
