@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import { useProductContextGlobal } from "./context/productContext";
 import { useEffect } from "react";
+import PageNavigation from "./components/PageNavigation";
 
 const API = "https://api.pujakaitem.com/api/products";
 
@@ -29,7 +30,7 @@ const SingleProduct = () => {
 
   return (
     <Wrapper>
-      <h1>single page {name}</h1>
+      <PageNavigation title={name} />
     </Wrapper>
   );
 };
