@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import axios from "axios";
-import reducer from "./reducer/productReducer";
+import reducer from "../reducer/productReducer";
 
 const AppContext = createContext();
 const API = "https://api.pujakaitem.com/api/products";
@@ -32,6 +32,7 @@ const AppProvider = ({ children }) => {
       });
     }
   };
+
   //2nd api call
 
   const getSingleProduct = async (url) => {

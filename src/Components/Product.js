@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import FormatPrice from "../Helpers.js/FormatPrice";
+import FormatPrice from "../Helpers/FormatPrice";
 
 const Product = (elem) => {
   const { id, name, image, price, category } = elem;
