@@ -1,10 +1,22 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { FaCheck } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
+import { Button } from "../styles/Button";
+import CartAmountToggle from "./CartAmountToggle";
 
 const AddToCart = ({ product }) => {
   const { id, colors, stock } = product;
   const [color, setColor] = useState(colors[0]);
+  const [amount, setAmount] = useState(1);
+  const setDecrement = () => {
+    amount > 1 ? setAmount(amount - 1) : setAmount(1);
+  };
+
+  const setIncrement = () => {
+    stock > amount ? setAmount(amount + 1) : amount(stock);
+  };
+
   return (
     <Wrapper>
       <div className="colors">
@@ -24,6 +36,20 @@ const AddToCart = ({ product }) => {
           })}
         </p>
       </div>
+
+      {/* Increment and Decrement for Add to cart */}
+
+      <CartAmountToggle
+        amount={amount}
+        setDecrement={setDecrement}
+        setIncrement={setIncrement}
+      />
+
+      {/* AddtoCart button */}
+
+      <NavLink to="/cart">
+        <Button className="btn">Add To Cart</Button>
+      </NavLink>
     </Wrapper>
   );
 };
