@@ -13,18 +13,18 @@ const initialState = {
 export const FilterContextProvider = ({ children }) => {
 	const { products } = useProductContextGlobal();
 
-  const [state, dispatch] = useReducer(reducer, initialState);
-  
-  const setGridView = () => {
-    dispatch({type:"SET_GRID_VIEW"})
-  }
+	const [state, dispatch] = useReducer(reducer, initialState);
+
+	const setGridView = () => {
+		dispatch({ type: "SET_GRID_VIEW" });
+	};
 
 	useEffect(() => {
 		dispatch({ type: "LOAD_FILTER_PRODUCTS", payload: products });
 	}, [products]);
 
 	return (
-		<FilterContext.Provider value={{ ...state ,setGridView}}>
+		<FilterContext.Provider value={{ ...state, setGridView }}>
 			{children}
 		</FilterContext.Provider>
 	);

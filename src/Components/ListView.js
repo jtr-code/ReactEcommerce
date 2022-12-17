@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const ListView = () => {
-  return (
-    <div>ListView</div>
-  )
-}
+	return <div>ListView</div>;
+};
 
-export default ListView
+export default ListView;
