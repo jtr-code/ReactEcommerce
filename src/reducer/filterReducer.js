@@ -79,17 +79,17 @@ const filterReducer = (state, action) => {
 				});
 			}
 
-			// if (category) {
-			// 	tempFilterProduct = tempFilterProduct.filter((curElem) => {
-			// 		return curElem.category === category;
-			// 	});
-			// }
+			if (category) {
+				tempFilterProduct = tempFilterProduct.filter((curElem) => {
+					return curElem.category === category;
+				});
+			}
 
-			// if (company !== "all") {
-			// 	tempFilterProduct = tempFilterProduct.filter(
-			// 		(c) => c.company === company
-			// 	);
-			// }
+			if (company !== "all") {
+				tempFilterProduct = tempFilterProduct.filter(
+					(c) => c.company === company
+				);
+			}
 
 			return {
 				...state,
