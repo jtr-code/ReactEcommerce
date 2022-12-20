@@ -96,7 +96,7 @@ const filterReducer = (state, action) => {
 				filter_products: tempFilterProduct,
 			};
 
-		default:
+		default: 
 			return state;
 	}
 };

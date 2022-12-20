@@ -4,8 +4,18 @@ import { useFilterContext } from "../context/filterContext";
 const FilterSection = () => {
 	const {
 		filters: { text },
+		all_products,
 		updateFilterValue,
 	} = useFilterContext();
+
+	const getUniqueData = (data, property) => {
+		let newValue = data.map((curElem) => {
+			return curElem[property];
+		});
+		newValue = ["All", ...new Set(newValue)];
+		console.log(newValue);
+	};
+	const categoryData = getUniqueData(all_products, "category");
 
 	return (
 		<Wrapper>
@@ -19,6 +29,7 @@ const FilterSection = () => {
 						type="text"
 						name="text"
 						placeholder="Search"
+						autoComplete="off"
 						value={text}
 						onChange={updateFilterValue}
 					/>
