@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useFilterContext } from "../context/filterContext";
-// import { FaCheck } from "react-icons/fa";
+import { FaCheck } from "react-icons/fa";
 
 const FilterSection = () => {
 	const {
@@ -27,7 +27,6 @@ const FilterSection = () => {
 	const categoryData = getUniqueData(all_products, "category");
 	const companyData = getUniqueData(all_products, "company");
 	const colorsData = getUniqueData(all_products, "colors");
-	
 
 	return (
 		<Wrapper>
@@ -43,7 +42,7 @@ const FilterSection = () => {
 				</form>
 			</div>
 
-			 <div className="filter-category">
+			<div className="filter-category">
 				<h3>Category</h3>
 				<div>
 					{categoryData.map((curElem, index) => {
@@ -63,7 +62,7 @@ const FilterSection = () => {
 				</div>
 			</div>
 
-			 <div className="filter-company">
+			<div className="filter-company">
 				<h3>Company</h3>
 
 				<form action="#">
@@ -82,13 +81,27 @@ const FilterSection = () => {
 						})}
 					</select>
 				</form>
-			</div> 
+			</div>
 
-			 <div className="filter-colors colors">
+			<div className="filter-colors colors">
 				<h3>Colors</h3>
 
 				<div className="filter-color-style">
 					{colorsData.map((curColor, index) => {
+						if (curColor === "all") {
+							return (
+								<button
+									key={index}
+									type="button"
+									value={curColor}
+									name="color"
+									className="color-all--style"
+									onClick={updateFilterValue}
+								>
+									All
+								</button>
+							);
+						}
 						return (
 							<button
 								key={index}
@@ -96,15 +109,15 @@ const FilterSection = () => {
 								value={curColor}
 								name="color"
 								style={{ backgroundColor: curColor }}
-								className="btnStyle"
+								className={color === curColor ? "btnStyle active" : "btnStyle"}
 								onClick={updateFilterValue}
 							>
-								{color === curColor ? "" : null}
+								{color === curColor ? <FaCheck className="checkStyle" /> : null}
 							</button>
 						);
 					})}
 				</div>
-			</div>  
+			</div>
 		</Wrapper>
 	);
 };
