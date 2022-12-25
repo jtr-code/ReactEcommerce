@@ -4,7 +4,7 @@ import CartItem from "./components/CartItem";
 
 const Cart = () => {
 	const { cart } = useCartContext();
-	console.log("cart: ", cart);
+	// console.log("cart: ", cart);
 
 	return (
 		<Wrapper>
