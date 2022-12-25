@@ -1,21 +1,27 @@
 import styled from "styled-components";
 import { useCartContext } from "./context/cartContext";
+import CartItem from "./components/CartItem";
 
 const Cart = () => {
 	const { cart } = useCartContext();
-	console.log("cart: ", cart);
+	// console.log("cart: ", cart);
 
 	return (
 		<Wrapper>
 			<div className="container">
 				<div className="cart_heading grid grid-five-column">
-					<p>Item</p>
-					<p className="cart-hide">Price</p>
-					<p>Quantity</p>
-					<p className="cart-hide">Subtotal</p>
-					<p>Remove</p>
+					<p>ITEM</p>
+					<p className="cart-hide">PRICE</p>
+					<p>QUANTITY</p>
+					<p className="cart-hide">SUBTOTAL</p>
+					<p>REMOVE</p>
 				</div>
 				<hr />
+				<div className="cart-item">
+					{cart.map((curElem) => {
+						return <CartItem key={curElem.id} {...curElem} />;
+					})}
+				</div>
 			</div>
 		</Wrapper>
 	);
