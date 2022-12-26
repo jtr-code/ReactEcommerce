@@ -1,11 +1,20 @@
 import styled from "styled-components";
 import { useCartContext } from "./context/cartContext";
 import CartItem from "./components/CartItem";
+import { NavLink } from "react-router-dom";
+import { Button } from "./styles/Button";
 
 const Cart = () => {
-	const { cart } = useCartContext();
+	const { cart, clearCart } = useCartContext();
 	// console.log("cart: ", cart);
 
+	if (cart.length === 0) {
+		return (
+			<EmptyDiv>
+				<h3>No Items in the Cart</h3>
+			</EmptyDiv>
+		);
+	}
 	return (
 		<Wrapper>
 			<div className="container">
@@ -22,10 +31,31 @@ const Cart = () => {
 						return <CartItem key={curElem.id} {...curElem} />;
 					})}
 				</div>
+				<hr />
+
+				<div className="cart-two-button">
+					<NavLink to="/products">
+						<Button>Continue Shopping</Button>
+					</NavLink>
+					<Button onClick={clearCart} className="btn btn-clear">
+						Clear Cart
+					</Button>
+				</div>
 			</div>
 		</Wrapper>
 	);
 };
+
+const EmptyDiv = styled.div`
+	display: grid;
+	place-items: center;
+	height: 50vh;
+	h3 {
+		font-size: 4.5rem;
+		text-transform: capitalize;
+		font-weight: 300;
+	}
+`;
 
 const Wrapper = styled.section`
 	padding: 9rem 0;
