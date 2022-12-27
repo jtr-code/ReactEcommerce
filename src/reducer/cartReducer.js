@@ -42,6 +42,40 @@ const cartReducer = (state, action) => {
 				};
 			}
 
+		case "SET_INCREMENT":
+			let updatedProduct = state.cart.map((curElem) => {
+				if (curElem.id === action.payload) {
+					let ProductIncrement = curElem.amount + 1;
+					return {
+						...curElem,
+						amount: ProductIncrement,
+					};
+				} else {
+					return curElem;
+				}
+			});
+			return {
+				...state,
+				cart: updatedProduct,
+			};
+
+		case "SET_DECREMENT":
+			let decrementProduct = state.cart.map((curElem) => {
+				if (curElem.id == action.payload) {
+					let decProduct = curElem.amount - 1;
+					return {
+						...curElem,
+						amount: decProduct,
+					};
+				} else {
+					return curElem;
+				}
+			});
+			return {
+				...state,
+				cart: decrementProduct,
+			};
+
 		case "REMOVE_ITEM":
 			let updatedCart = state.cart.filter(
 				(curItem) => curItem.id !== action.payload

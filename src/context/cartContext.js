@@ -13,7 +13,6 @@ const getLocalCartData = () => {
 };
 
 const initialState = {
-	// cart: [],
 	cart: getLocalCartData(),
 	total_items: "",
 	total_amount: "",
@@ -23,13 +22,29 @@ const initialState = {
 const CartProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(reducer, initialState);
 
+	//to add products
+
 	const addToCart = (id, color, amount, product) => {
 		dispatch({ type: "ADD_TO_CART", payload: { id, color, amount, product } });
 	};
 
+	//to remove individual item
+
 	const removeItem = (id) => {
 		dispatch({ type: "REMOVE_ITEM", payload: id });
 	};
+
+	//Increment and Decrement
+
+	const setIncrement = (id) => {
+		dispatch({ type: "SET_INCREMENT", payload: id });
+	};
+
+	const setDecrement = (id) => {
+		dispatch({ type: "SET_DECREMENT", payload: id });
+	};
+
+	//clear the entire cart
 
 	const clearCart = () => {
 		dispatch({ type: "CLEAR_CART" });
@@ -43,7 +58,14 @@ const CartProvider = ({ children }) => {
 
 	return (
 		<CartContext.Provider
-			value={{ ...state, addToCart, removeItem, clearCart }}
+			value={{
+				...state,
+				addToCart,
+				removeItem,
+				clearCart,
+				setIncrement,
+				setDecrement,
+			}}
 		>
 			{children}
 		</CartContext.Provider>
