@@ -98,6 +98,17 @@ const cartReducer = (state, action) => {
 				cart: [],
 			};
 
+		case "UPDATE_TOTAL_CART_ITEM":
+			let updateTotalCartItem = state.cart.reduce((accum, curElem) => {
+				let { amount } = curElem;
+				let accumulator = accum + amount;
+				return accumulator;
+			}, 0);
+			return {
+				...state,
+				total_items: updateTotalCartItem,
+			};
+
 		default:
 			return state;
 	}
