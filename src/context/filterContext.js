@@ -22,6 +22,7 @@ const initialState = {
 
 export const FilterContextProvider = ({ children }) => {
 	const { products } = useProductContextGlobal();
+	console.log('products: ', products);
 
 	const [state, dispatch] = useReducer(reducer, initialState);
 

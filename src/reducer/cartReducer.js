@@ -46,6 +46,10 @@ const cartReducer = (state, action) => {
 			let updatedProduct = state.cart.map((curElem) => {
 				if (curElem.id === action.payload) {
 					let ProductIncrement = curElem.amount + 1;
+					if (ProductIncrement >= curElem.max) {
+						ProductIncrement = curElem.max;
+					}
+
 					return {
 						...curElem,
 						amount: ProductIncrement,
@@ -63,6 +67,9 @@ const cartReducer = (state, action) => {
 			let decrementProduct = state.cart.map((curElem) => {
 				if (curElem.id == action.payload) {
 					let decProduct = curElem.amount - 1;
+					if (decProduct <= 1) {
+						decProduct = 1;
+					}
 					return {
 						...curElem,
 						amount: decProduct,
