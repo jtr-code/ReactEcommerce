@@ -122,7 +122,6 @@ const cartReducer = (state, action) => {
 				...state,
 				total_price,
 			};
-		
 
 		default:
 			return state;
