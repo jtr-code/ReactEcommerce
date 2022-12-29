@@ -54,7 +54,7 @@ const CartProvider = ({ children }) => {
 
 	useEffect(() => {
 		dispatch({ type: "UPDATE_CART_TOTAL_PRICE_AND_ITEM" });
-	
+
 		localStorage.setItem("cartData", JSON.stringify(state.cart));
 	}, [state.cart]);
 

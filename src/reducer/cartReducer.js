@@ -98,7 +98,6 @@ const cartReducer = (state, action) => {
 				cart: [],
 			};
 
-
 		case "UPDATE_CART_TOTAL_PRICE_AND_ITEM":
 			let { total_items, total_price } = state.cart.reduce(
 				(accumulator, curElem) => {
