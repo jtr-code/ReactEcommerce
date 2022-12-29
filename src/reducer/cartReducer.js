@@ -65,7 +65,7 @@ const cartReducer = (state, action) => {
 
 		case "SET_DECREMENT":
 			let decrementProduct = state.cart.map((curElem) => {
-				if (curElem.id == action.payload) {
+				if (curElem.id === action.payload) {
 					let decProduct = curElem.amount - 1;
 					if (decProduct <= 1) {
 						decProduct = 1;
