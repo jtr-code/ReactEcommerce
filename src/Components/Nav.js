@@ -11,7 +11,7 @@ const Nav = () => {
 	const [menuIcon, setMenuIcon] = useState();
 
 	const { total_items } = useCartContext();
-	const { loginWithRedirect } = useAuth0();
+	const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
 
 	const Nav = styled.nav`
 		.navbar-lists {
@@ -185,9 +185,20 @@ const Nav = () => {
 							Contact
 						</NavLink>
 					</li>
-					<li>
-						<Button onClick={() => loginWithRedirect()}>Log In</Button>
-					</li>
+					{isAuthenticated ? (
+						<li>
+							<Button
+								onClick={() => logout({ returnTo: window.location.origin })}
+							>
+								Log Out
+							</Button>
+						</li>
+					) : (
+						<li>
+							<Button onClick={() => loginWithRedirect()}>Log In</Button>
+						</li>
+					)}
+
 					<li>
 						<NavLink to="/cart" className="navbar-link cart-trolley--link">
 							<FiShoppingCart className="cart-trolley" />
