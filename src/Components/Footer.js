@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { Button } from "../styles/Button";
-import { FaGithub, FaInstagram } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
 const Footer = () => {
 	return (
@@ -35,7 +35,11 @@ const Footer = () => {
 							<h3>Follow Me</h3>
 							<div className="footer-social--icons">
 								<div>
-									<a href="https://github.com/jtr-code" target="_blank">
+									<a
+										href="https://github.com/jtr-code"
+										target="_blank"
+										rel="noreferrer"
+									>
 										<FaGithub className="icons" />
 									</a>
 								</div>
